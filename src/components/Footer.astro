@@ -1,0 +1,14 @@
+---
+---
+
+<footer class="flex flex-row justify-center">
+  <small>
+    Flavio Rizzoglio | <span id="year"></span>
+  </small>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>

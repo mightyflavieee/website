@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon";
+import { ButtonProps } from "../models/ButtonProps.model";
+
+const {
+  text,
+  href,
+  color,
+  icon,
+  isFilled = true,
+  disabled = false,
+  classes,
+} = Astro.props as ButtonProps;
+---
+
+<a href={href} class:list={[classes, isFilled ? "" : ""]}>
+  {
+    icon && icon.side === "left" && (
+      <Icon name={icon.name} height="24" width="24" />
+    )
+  }
+  <span>{text}</span>
+  {
+    icon && icon.side === "right" && (
+      <Icon name={icon.name} height="24" width="24" />
+    )
+  }
+</a>

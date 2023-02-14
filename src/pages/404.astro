@@ -1,0 +1,13 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Error from "../components/Error.astro";
+
+const {
+  title = "Flavio Rizzoglio | Error",
+  description = "Something ent rong.",
+} = Astro.props;
+---
+
+<MainLayout {title} {description}>
+  <Error />
+</MainLayout>
