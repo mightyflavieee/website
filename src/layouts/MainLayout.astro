@@ -10,9 +10,9 @@ const {
 
 <html lang="en">
   <MainHead {title} {description} />
-  <body class="bg-slate-900 text-white h-screen min-h-screen flex flex-col">
-    <main class="h-full">
-      <slot>Default Text</slot>
+  <body class="bg-slate-900 text-white h-screen flex flex-col overflow-auto">
+    <main class="md:h-full h-fit">
+      <slot />
     </main>
     <Footer />
   </body>

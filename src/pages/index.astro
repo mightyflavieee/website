@@ -1,9 +1,51 @@
 ---
+import Button from "../components/Button.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import { ButtonPropsColor, IconSide } from "../models/ButtonProps.model";
+
+const cvButtonIcon = {
+  name: "ic:baseline-cloud-download",
+  side: IconSide.LEFT,
+};
+const contactMeButtonIcon = {
+  name: "ri:mail-add-line",
+  side: IconSide.LEFT,
+};
 ---
 
 <MainLayout>
   <div class="flex h-full flex-col items-center justify-center">
-    <h1 class="flex">Hi from Flavio!</h1>
+    <div class="flex flex-col md:flex-row gap-4 justify-center w-2/3 md:w-1/2">
+      <div class="flex flex-col">
+        <span class="md:text-8xl text-5xl font-bold">Flavio</span>
+        <span class="md:text-8xl text-5xl font-bold mb-4">Rizzoglio</span>
+        <p class="hidden md:block mb-4 text-base font-normal">
+          Software Engineer and MSc student in Computer Science & Engineering.
+          Experience in software development, web development and constantly
+          looking to expand my knowledge. I love sports and I'm always down for
+          a good challenge!
+        </p>
+        <Button
+          text="DOWNLOAD MY CV"
+          href=""
+          icon={cvButtonIcon}
+          isFilled={true}
+          color={ButtonPropsColor.SECONDARY}
+          classes="mb-1"
+        />
+        <Button
+          text="CONTACT ME"
+          href="mailto:flaviorizzoglio@gmail.com"
+          icon={contactMeButtonIcon}
+          isFilled={true}
+          color={ButtonPropsColor.PRIMARY}
+        />
+      </div>
+      <img
+        src="/flavio-removebg-preview.png"
+        alt="Picture of me."
+        class="rounded-full"
+      />
+    </div>
   </div>
 </MainLayout>

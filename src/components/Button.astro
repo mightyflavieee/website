@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { ButtonProps } from "../models/ButtonProps.model";
+import { ButtonProps, ButtonPropsColor } from "../models/ButtonProps.model";
 
 const {
   text,
@@ -8,21 +8,37 @@ const {
   color,
   icon,
   isFilled = true,
-  disabled = false,
   classes,
 } = Astro.props as ButtonProps;
 ---
 
-<a href={href} class:list={[classes, isFilled ? "" : ""]}>
-  {
-    icon && icon.side === "left" && (
-      <Icon name={icon.name} height="24" width="24" />
-    )
-  }
-  <span>{text}</span>
-  {
-    icon && icon.side === "right" && (
-      <Icon name={icon.name} height="24" width="24" />
-    )
-  }
+<a
+  id={text}
+  href={href}
+  class:list={[
+    "rounded-lg bg-indigo-500 font-medium px-2 py-3",
+    classes,
+    color === ButtonPropsColor.PRIMARY && isFilled
+      ? "bg-white text-indigo-500"
+      : "",
+    color === ButtonPropsColor.SECONDARY && isFilled ? "bg-indigo-500" : "",
+    color === ButtonPropsColor.PRIMARY && !isFilled ? "border-white" : "",
+    color === ButtonPropsColor.SECONDARY && !isFilled
+      ? "border-indigo-500 text-indigo-500"
+      : "",
+  ]}
+>
+  <div class="flex flex-row justify-center">
+    {
+      icon && icon.side === "left" && (
+        <Icon class="mr-2" name={icon.name} height="24" width="24" />
+      )
+    }
+    <span>{text}</span>
+    {
+      icon && icon.side === "right" && (
+        <Icon class="ml-2" name={icon.name} height="24" width="24" />
+      )
+    }
+  </div>
 </a>

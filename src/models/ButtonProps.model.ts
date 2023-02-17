@@ -6,7 +6,6 @@ export interface ButtonProps {
     side: IconSide;
   };
   isFilled?: boolean;
-  disabled?: boolean;
   classes?: string;
   color: ButtonPropsColor;
 }
