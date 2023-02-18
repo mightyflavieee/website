@@ -1,18 +1,13 @@
 ---
-import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import HomepageInfo from "../components/HomepageInfo.astro";
+import Projects from "../components/Projects.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import { ButtonPropsColor, IconSide } from "../models/ButtonProps.model";
-
-const cvButtonIcon = {
-  name: "ic:baseline-cloud-download",
-  side: IconSide.LEFT,
-};
-const contactMeButtonIcon = {
-  name: "ri:mail-add-line",
-  side: IconSide.LEFT,
-};
 ---
 
 <MainLayout>
-  <div class="flex h-full flex-col items-center justify-center">hello!</div>
+  <div class="mx-auto flex flex-col items-center">
+    <HomepageInfo />
+    <Projects />
+  </div>
 </MainLayout>

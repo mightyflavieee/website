@@ -12,10 +12,10 @@ const {
 <html lang="en">
   <MainHead {title} {description} />
   <body class="flex h-screen flex-col overflow-auto bg-slate-900 text-white">
-    <Navbar />
     <main class="h-full">
+      <Navbar />
       <slot />
+      <Footer />
     </main>
-    <!-- <Footer /> -->
   </body>
 </html>
