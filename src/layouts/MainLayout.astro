@@ -1,6 +1,7 @@
 ---
 import MainHead from "./MainHead.astro";
 import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 
 const {
   title = "Flavio Rizzoglio | Homepage",
@@ -11,7 +12,8 @@ const {
 <html lang="en">
   <MainHead {title} {description} />
   <body class="flex h-screen flex-col overflow-auto bg-slate-900 text-white">
-    <main class="h-fit md:h-full">
+    <Navbar />
+    <main class="h-full">
       <slot />
     </main>
     <Footer />

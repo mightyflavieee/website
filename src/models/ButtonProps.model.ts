@@ -6,6 +6,7 @@ export interface ButtonProps {
     side: IconSide;
   };
   isFilled?: boolean;
+  isGradient?: boolean;
   classes?: string;
   color: ButtonPropsColor;
 }

@@ -8,6 +8,7 @@ const {
   color,
   icon,
   isFilled = true,
+  isGradient = false,
   classes,
 } = Astro.props as ButtonProps;
 ---
@@ -16,19 +17,22 @@ const {
   id={text}
   href={href}
   class:list={[
-    "rounded-lg bg-indigo-500 font-medium px-2 py-3",
+    "rounded-lg font-medium px-4 py-3",
     classes,
-    color === ButtonPropsColor.PRIMARY && isFilled
+    isGradient
+      ? "bg-gradient-to-r from-indigo-500 to-[#30c9e8] hover:from-white hover:to-white hover:text-indigo-500"
+      : "",
+    color === ButtonPropsColor.PRIMARY && isFilled && !isGradient
       ? "bg-white text-indigo-500 hover:bg-indigo-500 hover:text-white"
       : "",
-    color === ButtonPropsColor.SECONDARY && isFilled
+    color === ButtonPropsColor.SECONDARY && isFilled && !isGradient
       ? "bg-indigo-500 hover:bg-white hover:text-indigo-500"
       : "",
-    color === ButtonPropsColor.PRIMARY && !isFilled
-      ? "border-white hover:bg-white hover:text-indigo-500"
+    color === ButtonPropsColor.PRIMARY && !isFilled && !isGradient
+      ? "border border-white hover:bg-white hover:text-indigo-500"
       : "",
-    color === ButtonPropsColor.SECONDARY && !isFilled
-      ? "border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white"
+    color === ButtonPropsColor.SECONDARY && !isFilled && !isGradient
+      ? "border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white"
       : "",
   ]}
 >
