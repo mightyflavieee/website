@@ -1,6 +1,10 @@
 ---
 import { Icon } from "astro-icon";
-import { ButtonProps, ButtonPropsColor } from "../models/ButtonProps.model";
+import {
+  ButtonProps,
+  ButtonPropsColor,
+  IconSide,
+} from "../models/ButtonProps.model";
 
 const {
   text,
@@ -35,16 +39,23 @@ const {
       : "",
   ]}
 >
-  <div class="flex flex-row justify-center">
+  <div class="flex flex-row items-center justify-center">
     {
       icon && icon.side === "left" && (
-        <Icon class="mr-2" name={icon.name} height="24" width="24" />
+        <Icon name={icon.name} height="24" width="24" />
       )
     }
-    <span>{text}</span>
+    <span
+      class:list={[
+        text === "" ? "hidden" : "",
+        icon !== undefined && icon !== null && icon.side === IconSide.LEFT
+          ? "ml-2"
+          : "mr-2",
+      ]}>{text}</span
+    >
     {
       icon && icon.side === "right" && (
-        <Icon class="ml-2" name={icon.name} height="24" width="24" />
+        <Icon name={icon.name} height="24" width="24" />
       )
     }
   </div>
