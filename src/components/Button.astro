@@ -14,13 +14,12 @@ const {
 ---
 
 <a
-  id={text}
   href={href}
   class:list={[
     "rounded-lg font-medium px-4 py-3",
     classes,
     isGradient
-      ? "bg-gradient-to-r from-indigo-500 to-[#30c9e8] hover:from-white hover:to-white hover:text-indigo-500"
+      ? "bg-gradient-to-r from-indigo-500 to-myLightBlue hover:from-white hover:to-white hover:text-indigo-500"
       : "",
     color === ButtonPropsColor.PRIMARY && isFilled && !isGradient
       ? "bg-white text-indigo-500 hover:bg-indigo-500 hover:text-white"
