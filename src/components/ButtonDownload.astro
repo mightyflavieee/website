@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon";
+import {
+  ButtonProps,
+  ButtonPropsColor,
+  IconSide,
+} from "../models/ButtonProps.model";
+
+const {
+  text,
+  href,
+  color,
+  icon,
+  isFilled = true,
+  isGradient = false,
+  classes,
+} = Astro.props as ButtonProps;
+---
+
+<a
+  href={href}
+  download="Flavio_Rizzoglio_CV"
+  class:list={[
+    "rounded-lg font-medium px-4 py-3",
+    classes,
+    isGradient
+      ? "bg-gradient-to-r from-indigo-500 to-myLightBlue hover:from-white hover:to-white hover:text-indigo-500"
+      : "",
+    color === ButtonPropsColor.PRIMARY && isFilled && !isGradient
+      ? "bg-white text-indigo-500 hover:bg-indigo-500 hover:text-white"
+      : "",
+    color === ButtonPropsColor.SECONDARY && isFilled && !isGradient
+      ? "bg-indigo-500 hover:bg-white hover:text-indigo-500"
+      : "",
+    color === ButtonPropsColor.PRIMARY && !isFilled && !isGradient
+      ? "border border-white hover:bg-white hover:text-indigo-500"
+      : "",
+    color === ButtonPropsColor.SECONDARY && !isFilled && !isGradient
+      ? "border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white"
+      : "",
+  ]}
+>
+  <div class="flex flex-row items-center justify-center">
+    {
+      icon && icon.side === "left" && (
+        <Icon name={icon.name} height="24" width="24" />
+      )
+    }
+    <span
+      class:list={[
+        text === "" ? "hidden" : "",
+        icon !== undefined && icon !== null && icon.side === IconSide.LEFT
+          ? "ml-2"
+          : "mr-2",
+      ]}>{text}</span
+    >
+    {
+      icon && icon.side === "right" && (
+        <Icon name={icon.name} height="24" width="24" />
+      )
+    }
+  </div>
+</a>
