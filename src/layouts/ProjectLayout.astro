@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon";
+import MainLayout from "./MainLayout.astro";
+
+const { title, description } = Astro.props;
+---
+
+<MainLayout title={"Flavio Rizzoglio | " + title} description={description}>
+  <div class="mt-5 flex w-full flex-col gap-2 px-4">
+    <a href="/">
+      <Icon name="mdi:keyboard-backspace" height="35" width="35" />
+    </a>
+    <span class="flex justify-center text-2xl font-bold">{title}</span>
+
+    <div
+      class="flex flex-col rounded-lg border-4 border-gray-500 border-opacity-90 bg-gray-500 bg-opacity-10 px-3 py-4"
+    >
+      <slot />
+    </div>
+  </div>
+</MainLayout>

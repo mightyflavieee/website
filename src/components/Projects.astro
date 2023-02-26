@@ -14,7 +14,7 @@ const projects: ProjectData[] = getProjects();
         <Card
           title={project.name}
           description={project.text_description}
-          link={project.link}
+          link={"projects/" + project.link}
         />
       </>
     ))
