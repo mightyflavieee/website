@@ -11,8 +11,10 @@ const {
 
 <html lang="en">
   <MainHead {title} {description} />
-  <body class="flex h-screen flex-col overflow-auto bg-slate-900 text-white">
-    <main class="h-full">
+  <body
+    class="min-w-screen flex h-screen flex-col overflow-auto bg-slate-900 text-white lg:items-center"
+  >
+    <main class="h-full lg:w-2/3">
       <Navbar />
       <slot />
       <Footer />
