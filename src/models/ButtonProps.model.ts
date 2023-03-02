@@ -9,6 +9,7 @@ export interface ButtonProps {
   isGradient?: boolean;
   classes?: string;
   color: ButtonPropsColor;
+  ariaLabel: string;
 }
 
 export enum ButtonPropsColor {

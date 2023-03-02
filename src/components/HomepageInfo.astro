@@ -24,13 +24,15 @@ const gmailIcon = {
       alt="My photo"
       class="h-70 w-60 rounded-full"
     />
-    <span class="text-lg">
-      I am software engineer at Fundvis and a computer science and engineering
-      student with a passion for innovation and problem-solving. I'm skilled in
-      programming languages, algorithms, software development methodologies, and
-      have a strong track record of delivering powerful results through
-      collaboration and ongoing learning.
-    </span>
+    <p class="text-lg">
+      I am a Software Engineer at <a
+        href="https://fundvis.org"
+        class="text-myLightBlue">Fundvis</a
+      > and a computer science and engineering student with a passion for innovation
+      and problem-solving. I'm skilled in programming languages, algorithms, software
+      development methodologies, and have a strong track record of delivering powerful
+      results through collaboration and ongoing learning.
+    </p>
   </div>
   <div class="flex flex-row justify-between px-10">
     <Button
@@ -39,6 +41,7 @@ const gmailIcon = {
       icon={linkedInIcon}
       isFilled={true}
       color={ButtonPropsColor.PRIMARY}
+      ariaLabel="Linkedin Profile"
     />
     <Button
       text=""
@@ -46,6 +49,7 @@ const gmailIcon = {
       icon={githubIcon}
       isFilled={true}
       color={ButtonPropsColor.PRIMARY}
+      ariaLabel="Github Profile"
     />
     <Button
       text=""
@@ -53,6 +57,7 @@ const gmailIcon = {
       icon={gmailIcon}
       isFilled={true}
       color={ButtonPropsColor.PRIMARY}
+      ariaLabel="Mail contact"
     />
   </div>
 </div>
