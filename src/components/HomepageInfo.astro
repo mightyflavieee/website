@@ -2,18 +2,43 @@
 import { ButtonPropsColor, IconSide } from "../models/ButtonProps.model";
 import Button from "./Button.astro";
 
-const githubIcon = {
-  name: "mdi:github",
-  side: IconSide.LEFT,
-};
-const linkedInIcon = {
-  name: "mdi:linkedin",
-  side: IconSide.LEFT,
-};
-const gmailIcon = {
-  name: "mdi:gmail",
-  side: IconSide.LEFT,
-};
+const links: {
+  linkName: string;
+  linkUrl;
+  icon: {
+    name: string;
+    side: IconSide;
+  };
+  ariaLabel: string;
+}[] = [
+  {
+    linkName: "LinkedIn",
+    linkUrl: "https://www.linkedin.com/in/flavio-rizzoglio/",
+    icon: {
+      name: "mdi:linkedin",
+      side: IconSide.LEFT,
+    },
+    ariaLabel: "LinkedIn Profile",
+  },
+  {
+    linkName: "GitHub",
+    linkUrl: "https://github.com/mightyflavieee",
+    icon: {
+      name: "mdi:github",
+      side: IconSide.LEFT,
+    },
+    ariaLabel: "GitHub Profile",
+  },
+  {
+    linkName: "Mail",
+    linkUrl: "mailto:flaviorizzoglio@gmail.com",
+    icon: {
+      name: "mdi:gmail",
+      side: IconSide.LEFT,
+    },
+    ariaLabel: "Mail contact",
+  },
+];
 ---
 
 <div class="mt-10 mb-10 flex flex-col gap-8 px-8">
@@ -25,39 +50,52 @@ const gmailIcon = {
       class="h-70 w-60 rounded-full"
     />
     <p class="text-lg">
-      I am a Software Engineer at <a
-        href="https://fundvis.org"
-        class="text-myLightBlue">Fundvis</a
-      > and a computer science and engineering student with a passion for innovation
-      and problem-solving. I'm skilled in programming languages, algorithms, software
-      development methodologies, and have a strong track record of delivering powerful
-      results through collaboration and ongoing learning.
+      I am a Software Engineer at
+      <a href="https://fundvis.org" target="_blank" class="text-myLightBlue">
+        Fundvis
+      </a>
+      and a computer science and engineering student at
+      <a href="https://polimi.it" target="_blank" class="text-myLightBlue">
+        Polimi
+      </a>
+      with a passion for innovation and problem-solving. I'm skilled in programming
+      languages, algorithms, software development methodologies, and have a strong
+      track record of delivering powerful results through collaboration and ongoing
+      learning.
     </p>
   </div>
-  <div class="flex flex-row justify-between px-10">
-    <Button
-      text=""
-      href="https://www.linkedin.com/in/flavio-rizzoglio/"
-      icon={linkedInIcon}
-      isFilled={true}
-      color={ButtonPropsColor.PRIMARY}
-      ariaLabel="Linkedin Profile"
-    />
-    <Button
-      text=""
-      href="https://github.com/mightyflavieee"
-      icon={githubIcon}
-      isFilled={true}
-      color={ButtonPropsColor.PRIMARY}
-      ariaLabel="Github Profile"
-    />
-    <Button
-      text=""
-      href="mailto:flaviorizzoglio@gmail.com"
-      icon={gmailIcon}
-      isFilled={true}
-      color={ButtonPropsColor.PRIMARY}
-      ariaLabel="Mail contact"
-    />
+  <div
+    class="flex flex-row justify-between px-10 md:w-full md:justify-start md:gap-4 md:px-4"
+  >
+    {
+      links.map((link) => (
+        <>
+          <Button
+            text=""
+            href={link.linkUrl}
+            icon={link.icon}
+            isFilled={true}
+            color={ButtonPropsColor.PRIMARY}
+            classes="md:hidden"
+            ariaLabel={link.ariaLabel}
+          />
+        </>
+      ))
+    }
+    {
+      links.map((link) => (
+        <>
+          <Button
+            text={link.linkName}
+            href={link.linkUrl}
+            icon={link.icon}
+            isFilled={true}
+            color={ButtonPropsColor.PRIMARY}
+            classes="hidden md:block md:w-1/3"
+            ariaLabel={link.ariaLabel}
+          />
+        </>
+      ))
+    }
   </div>
 </div>
