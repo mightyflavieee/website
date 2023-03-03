@@ -1,44 +1,10 @@
 ---
+import { getPersonalLinks } from "../data/personal-links.data";
 import { ButtonPropsColor, IconSide } from "../models/ButtonProps.model";
+import { PersonalLinksData } from "../models/PersonalLink.model";
 import Button from "./Button.astro";
 
-const links: {
-  linkName: string;
-  linkUrl;
-  icon: {
-    name: string;
-    side: IconSide;
-  };
-  ariaLabel: string;
-}[] = [
-  {
-    linkName: "LinkedIn",
-    linkUrl: "https://www.linkedin.com/in/flavio-rizzoglio/",
-    icon: {
-      name: "mdi:linkedin",
-      side: IconSide.LEFT,
-    },
-    ariaLabel: "LinkedIn Profile",
-  },
-  {
-    linkName: "GitHub",
-    linkUrl: "https://github.com/mightyflavieee",
-    icon: {
-      name: "mdi:github",
-      side: IconSide.LEFT,
-    },
-    ariaLabel: "GitHub Profile",
-  },
-  {
-    linkName: "Mail",
-    linkUrl: "mailto:flaviorizzoglio@gmail.com",
-    icon: {
-      name: "mdi:gmail",
-      side: IconSide.LEFT,
-    },
-    ariaLabel: "Mail contact",
-  },
-];
+const links: PersonalLinksData[] = getPersonalLinks();
 ---
 
 <div class="mt-10 mb-10 flex flex-col gap-8 px-8">
