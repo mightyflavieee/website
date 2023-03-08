@@ -1,6 +1,10 @@
 ---
 import { getPersonalLinks } from "../data/personal-links.data";
-import { ButtonPropsColor, IconSide } from "../models/ButtonProps.model";
+import {
+  ButtonPropsColor,
+  ButtonTextSize,
+  IconSide,
+} from "../models/ButtonProps.model";
 import { PersonalLinksData } from "../models/PersonalLink.model";
 import Button from "./Button.astro";
 
@@ -63,5 +67,16 @@ const links: PersonalLinksData[] = getPersonalLinks();
         </>
       ))
     }
+  </div>
+  <div class="flex w-full flex-row px-10 md:px-4">
+    <Button
+      text="Need a new website? Contact Me!"
+      href="mailto:flaviorizzoglio@gmail.com"
+      textSize={ButtonTextSize.BIG}
+      isGradient={true}
+      color={ButtonPropsColor.SECONDARY}
+      classes="w-full"
+      ariaLabel="Contact me"
+    />
   </div>
 </div>

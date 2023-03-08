@@ -5,6 +5,7 @@ export interface ButtonProps {
     name: string;
     side: IconSide;
   };
+  textSize?: ButtonTextSize;
   isFilled?: boolean;
   isGradient?: boolean;
   classes?: string;
@@ -15,6 +16,12 @@ export interface ButtonProps {
 export enum ButtonPropsColor {
   PRIMARY = "primary",
   SECONDARY = "secondary",
+}
+
+export enum ButtonTextSize {
+  BIG = "big",
+  MEDIUM = "medium",
+  SMALL = "small",
 }
 
 export enum IconSide {

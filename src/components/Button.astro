@@ -3,6 +3,7 @@ import { Icon } from "astro-icon";
 import {
   ButtonProps,
   ButtonPropsColor,
+  ButtonTextSize,
   IconSide,
 } from "../models/ButtonProps.model";
 
@@ -11,6 +12,7 @@ const {
   href,
   color,
   icon,
+  textSize,
   isFilled = true,
   isGradient = false,
   classes,
@@ -24,7 +26,7 @@ const {
     "rounded-lg font-medium px-4 py-3",
     classes,
     isGradient
-      ? "bg-gradient-to-r from-indigo-500 to-myLightBlue hover:from-white hover:to-white hover:text-indigo-500"
+      ? "bg-gradient-to-r from-indigo-500 to-myLightBlue hover:from-indigo-900 hover:to-indigo-900 hover:text-white"
       : "",
     color === ButtonPropsColor.PRIMARY && isFilled && !isGradient
       ? "bg-white text-indigo-500 hover:bg-indigo-500 hover:text-white"
@@ -53,8 +55,13 @@ const {
         icon !== undefined && icon !== null && icon.side === IconSide.LEFT
           ? "ml-2"
           : "mr-2",
-      ]}>{text}</span
+        textSize === ButtonTextSize.BIG ? "text-2xl" : "",
+        textSize === ButtonTextSize.MEDIUM ? "text-md" : "",
+        textSize === ButtonTextSize.SMALL ? "text-xs" : "",
+      ]}
     >
+      {text}
+    </span>
     {
       icon && icon.side === "right" && (
         <Icon name={icon.name} height="24" width="24" />
