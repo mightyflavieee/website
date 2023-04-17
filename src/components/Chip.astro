@@ -1,11 +1,14 @@
 ---
-const { text } = Astro.props;
+import Icon from "astro-icon";
+
+const { text, icon } = Astro.props;
 ---
 
-<div class="flex items-center">
-  <span
-    class="rounded-full border-gray-500 bg-gray-500 bg-opacity-30 px-3 text-sm font-light"
-  >
+<div
+  class="text-md flex flex-row items-center rounded-full border-2 border-indigo-500 bg-white px-5 py-1 font-semibold text-indigo-900"
+>
+  <Icon name={icon} height="24" width="24" />
+  <span class="ml-2">
     {text}
   </span>
 </div>
