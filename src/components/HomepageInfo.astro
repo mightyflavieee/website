@@ -15,7 +15,7 @@ const links: PersonalLinksData[] = getPersonalLinks();
   <div class="flex flex-col items-center gap-8">
     <span class="text-4xl font-bold">Hello, I'm Flavio! 👋</span>
     <img
-      src="images/flavio_b&n.png"
+      src="images/flavio_cropped.png"
       alt="My photo"
       class="h-70 w-60 rounded-full"
     />
@@ -68,14 +68,22 @@ const links: PersonalLinksData[] = getPersonalLinks();
       ))
     }
   </div>
-  <div class="flex w-full flex-row px-10 md:px-4">
+  <div class="flex w-full flex-row md:px-4">
     <Button
       text="Need a new website? Contact Me!"
       href="mailto:flaviorizzoglio@gmail.com"
       textSize={ButtonTextSize.BIG}
       isGradient={true}
       color={ButtonPropsColor.SECONDARY}
-      classes="w-full"
+      classes="w-full hidden md:block"
+      ariaLabel="Contact me"
+    />
+    <Button
+      text="Need a new website? Contact Me!"
+      href="mailto:flaviorizzoglio@gmail.com"
+      isGradient={true}
+      color={ButtonPropsColor.SECONDARY}
+      classes="w-full md:hidden"
       ariaLabel="Contact me"
     />
   </div>

@@ -7,7 +7,11 @@ const projects: ProjectData[] = getProjects();
 ---
 
 <div class="flex flex-col gap-3 px-2">
-  <span class="text-2xl font-bold">Some of my projects:</span>
+  <span
+    class="flex w-full justify-center border-b border-gray-600 px-2 text-2xl font-bold"
+  >
+    Some of my projects:
+  </span>
   {
     projects.map((project) => (
       <>
