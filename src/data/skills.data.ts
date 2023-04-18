@@ -6,6 +6,7 @@ export function getSkills(): SkillData[] {
     { name: "Communication", icon: "mdi:account-voice" },
     { name: "Problem solving", icon: "mdi:puzzle" },
     { name: "Linux", icon: "mdi:linux" },
+    { name: "Docker", icon: "mdi:docker" },
     { name: "Git", icon: "mdi:git" },
     { name: "CI/CD", icon: "mdi:cog-refresh-outline" },
     { name: "SQL", icon: "mdi:database" },

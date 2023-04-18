@@ -8,7 +8,7 @@ const { text, icon } = Astro.props;
   class="text-md flex flex-row items-center rounded-full border-2 border-indigo-500 bg-white px-5 py-1 font-semibold text-indigo-900"
 >
   <Icon name={icon} height="24" width="24" />
-  <span class="ml-2">
+  <span class:list={text === "" ? "hidden" : "ml-2"}>
     {text}
   </span>
 </div>
