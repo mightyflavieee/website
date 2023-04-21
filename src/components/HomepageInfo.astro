@@ -13,9 +13,7 @@ const links: PersonalLinksData[] = getPersonalLinks();
 
 <div class="mt-10 mb-10 flex flex-col gap-8 px-8">
   <div class="flex flex-col items-center gap-8">
-    <span class="animate__animated animate__tada text-4xl font-bold"
-      >Hello, I'm Flavio! 👋</span
-    >
+    <span class="text-4xl font-bold">Hello, I'm Flavio! 👋</span>
     <img
       src="images/flavio_cropped.png"
       alt="My photo"
@@ -39,7 +37,7 @@ const links: PersonalLinksData[] = getPersonalLinks();
     </p>
   </div>
   <div
-    class="animate__animated animate__fadeInLeft animate__delay-1s flex flex-row justify-between px-10 md:w-full md:justify-start md:gap-4 md:px-4"
+    class="flex flex-row justify-between px-10 md:w-full md:justify-start md:gap-4 md:px-4"
   >
     {
       links.map((link) => (
@@ -72,9 +70,7 @@ const links: PersonalLinksData[] = getPersonalLinks();
       ))
     }
   </div>
-  <div
-    class="animate__animated animate__fadeInRight animate__delay-2s flex w-full flex-row md:px-4"
-  >
+  <div class="flex w-full flex-row md:px-4">
     <Button
       text="Need a new website? Contact Me!"
       href="mailto:flaviorizzoglio@gmail.com"
