@@ -12,7 +12,7 @@ function getWebsiteProject(): ProjectData {
   const project: ProjectData = {
     name: "This Website!",
     text_description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati labore corrupti doloremque hic ipsam sit, numquam tenetur perspiciatis quos! Laborum iste repellat quia aspernatur, ipsam illum, impedit quaerat porro atque explicabo, fugit delectus quo! Ipsum eveniet deleniti eius fugiat at.",
+      "This is repository houses my personal portfolio website. This website is built using the Astro framework and components are styled with the use of TailwindCSS.",
     link: "this-website",
   };
 
@@ -23,7 +23,7 @@ function getMastersOfReinassanceProject(): ProjectData {
   const project: ProjectData = {
     name: "Masters Of Reinassance",
     text_description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati labore corrupti doloremque hic ipsam sit, numquam tenetur perspiciatis quos! Laborum iste repellat quia aspernatur, ipsam illum, impedit quaerat porro atque explicabo, fugit delectus quo! Ipsum eveniet deleniti eius fugiat at.",
+      "Java distributed implementation of the tabletop game 'Masters of Reinassance'. The project is a distributed implementation of the game, where each player is connected to a remote server and can play the game with other players connected to the same server.",
     link: "masters-of-reinassance",
   };
 
@@ -34,7 +34,7 @@ function getLaGiocomotivaProject(): ProjectData {
   const project: ProjectData = {
     name: "lagiocomotiva.com",
     text_description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati labore corrupti doloremque hic ipsam sit, numquam tenetur perspiciatis quos! Laborum iste repellat quia aspernatur, ipsam illum, impedit quaerat porro atque explicabo, fugit delectus quo! Ipsum eveniet deleniti eius fugiat at.",
+      "Aim of the project as to renovate the old company website, adopting a solution that would allow non-technical users to post articles and easily edit the layout of a blog posts or pages inside the website.",
     link: "la-giocomotiva-com",
   };
 
