@@ -22,6 +22,7 @@ const {
 
 <a
   href={href}
+  target="_blank"
   class:list={[
     "rounded-lg font-medium px-4 py-3",
     classes,
@@ -45,16 +46,20 @@ const {
 >
   <div class="flex flex-row items-center justify-center">
     {
-      icon && icon.side === "left" && (
+      icon && icon.side === IconSide.LEFT && (
         <Icon name={icon.name} height="24" width="24" />
       )
     }
     <span
       class:list={[
         text === "" ? "hidden" : "",
+        icon === undefined || icon === null ? "ml-0" : "",
         icon !== undefined && icon !== null && icon.side === IconSide.LEFT
           ? "ml-2"
-          : "mr-2",
+          : "",
+        icon !== undefined && icon !== null && icon.side === IconSide.RIGHT
+          ? "mr-2"
+          : "",
         textSize === ButtonTextSize.BIG ? "text-2xl" : "",
         textSize === ButtonTextSize.MEDIUM ? "text-md" : "",
         textSize === ButtonTextSize.SMALL ? "text-xs" : "",
@@ -63,7 +68,7 @@ const {
       {text}
     </span>
     {
-      icon && icon.side === "right" && (
+      icon && icon.side === IconSide.RIGHT && (
         <Icon name={icon.name} height="24" width="24" />
       )
     }

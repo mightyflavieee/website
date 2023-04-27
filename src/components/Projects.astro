@@ -1,6 +1,8 @@
 ---
 import { getProjects } from "../data/projects.data";
+import { ButtonPropsColor, IconSide } from "../models/ButtonProps.model";
 import { ProjectData } from "../models/Project.model";
+import Button from "./Button.astro";
 import Card from "./Card.astro";
 
 const projects: ProjectData[] = getProjects();
@@ -23,4 +25,14 @@ const projects: ProjectData[] = getProjects();
       </>
     ))
   }
+  <div class="flex flex-row justify-center">
+    <div class="flex flex-col">
+      <Button
+        text="See more"
+        href="https://github.com/mightyflavieee"
+        isGradient={true}
+        ariaLabel="See more projects on my GitHub"
+      />
+    </div>
+  </div>
 </div>
