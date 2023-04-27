@@ -2,12 +2,12 @@
 layout: ../../layouts/ProjectLayout.astro
 title: lagiocomotiva.com
 author: Flavio Rizzoglio
-description: A brief explaination on how I buildt lagiocomotiva.com!
+description: https://www.lagiocomotiva.it
 ---
 
 # lagiocomotiva.it
 
-_Site available at: https://www.lagiocomotiva.it/_
+\_Site available at: https://www.lagiocomotiva.it
 
 ## ✏️ Description
 

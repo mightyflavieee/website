@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: Masters of Reinassance
 author: Flavio Rizzoglio
-description: A brief explaination on how I buildt Masters of Reinassance!
+description: https://github.com/mightyflavieee/ing-sw-2021-rizzoglio-ruberto-mussato
 ---
 
 # Masters of Reinassance

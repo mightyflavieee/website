@@ -2,14 +2,40 @@
 import { Icon } from "astro-icon";
 import MainLayout from "./MainLayout.astro";
 
-const { title, description } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<MainLayout title={"Flavio Rizzoglio | " + title} description={description}>
+<MainLayout
+  title={"Flavio Rizzoglio | " + frontmatter.title}
+  description={frontmatter.description}
+>
   <div class="mt-5 flex w-full flex-col gap-2 px-4">
-    <div class="flex flex-row">
-      <a href="/" class="flex flex-col justify-start">
-        <Icon name="mdi:keyboard-backspace" height="35" width="35" />
+    <div class="flex flex-row justify-between">
+      <a href="/">
+        <Icon name="mdi:keyboard-backspace" height="40" width="40" />
+      </a>
+      <a
+        href={frontmatter.description}
+        target="_blank"
+        class="flex flex-row items-center gap-2"
+        class:list={[
+          frontmatter.description.includes("github") ? '' : 'hidden'
+        ]}
+      >
+        <span>GitHub:</span>
+        <Icon name="mdi:github" height="30" width="30" />
+      </a>
+
+      <a
+        href={frontmatter.description}
+        target="_blank"
+        class="flex flex-row items-center gap-2"
+        class:list={[
+          !frontmatter.description.includes("github") ? '' : 'hidden'
+        ]}
+      >
+        <span>Website:</span>
+        <Icon name="mdi:globe" height="30" width="30" />
       </a>
     </div>
 

@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: This Website!
 author: Flavio Rizzoglio
-description: A brief explaination on how I buildt this website!
+description: https://github.com/mightyflavieee/website
 ---
 
 # flaviorizzoglio.dev
