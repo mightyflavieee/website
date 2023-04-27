@@ -32,10 +32,10 @@ function getMastersOfReinassanceProject(): ProjectData {
 
 function getLaGiocomotivaProject(): ProjectData {
   const project: ProjectData = {
-    name: "lagiocomotiva.com",
+    name: "lagiocomotiva.it",
     text_description:
       "Aim of the project as to renovate the old company website, adopting a solution that would allow non-technical users to post articles and easily edit the layout of a blog posts or pages inside the website.",
-    link: "la-giocomotiva-com",
+    link: "la-giocomotiva-it",
   };
 
   return project;
